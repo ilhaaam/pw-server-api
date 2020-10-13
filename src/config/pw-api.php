@@ -7,7 +7,7 @@ return [
      *
      * @var string
      */
-    'server_ip' => '127.0.0.1',
+    'server_ip' => setting('server.ip', '127.0.0.1'),
 
     /**
      * These ports MUST be open if you the package isn't on the host machine
@@ -15,10 +15,10 @@ return [
      * @var array
      */
     'ports' => [
-        'gamedbd' => 29400,
+        'client' => 29000,
         'gdeliveryd' => 29100,
         'gacd' => 29300,
-        'client' => 29000
+        'gamedbd' => 29400
     ],
 
     /**
@@ -28,7 +28,7 @@ return [
      *
      * @var int
      */
-    'game_version' => '156',
+    'game_version' => setting('server.version', '156'),
 
     'maxbuffer' => 65536,
 
