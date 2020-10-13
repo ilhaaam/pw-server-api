@@ -339,13 +339,25 @@ class API
     }
 
     /**
+     * Command to start/stop binding time and start territorial war
+     * @param mixed $param
+     * @return mixed
+     */
+    public function territoryWar( $param )
+    {
+        $pack = pack("N*", 1) . pack("N", 1) . $this->gamed->packString2( $param );
+
+        return $this->gamed->SendToProvider( $this->gamed->createHeader( $this->data['code']['territoryWar'], $pack ) );
+    }
+
+    /**
      * Send message to the game chat on the special channel
      * @params string $role
      * @params string $msg
      * @params string $chanel
      * @return boolean
      */
-    public function WorldChat( $role, $msg, $channel )
+    public function worldChat( $role, $msg, $channel )
     {
         $pack = pack("CCN", $channel, 0, $role) . $this->gamed->packString( $msg ) . $this->gamed->packOctet( '' );
 

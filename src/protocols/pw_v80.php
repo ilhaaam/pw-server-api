@@ -13,6 +13,7 @@ $PROTOCOL = array(
 		'getRoleStoreHouse' => 3027,
 		'getRoleTask' => 3019,
 		'sendMail' => 4214,
+		'territoryWar' => 873,
 		'worldChat' => 120,
 		'forbidAcc' => 5035,
 		'forbidRole' => 360,
