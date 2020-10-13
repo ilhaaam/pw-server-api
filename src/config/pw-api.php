@@ -7,7 +7,7 @@ return [
      *
      * @var string
      */
-    'local' => '127.0.0.1',
+    'server_ip' => '127.0.0.1',
 
     /**
      * These ports MUST be open if you the package isn't on the host machine
@@ -28,7 +28,7 @@ return [
      *
      * @var int
      */
-    'game_version' => '07',
+    'game_version' => '156',
 
     'maxbuffer' => 65536,
 

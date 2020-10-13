@@ -5,7 +5,7 @@ namespace Ham\PerfectWorldAPI;
 /**
  * Class API
  *
- * @package ham/pw-api
+ * @package ham/pw-server-api
  */
 class API
 {
@@ -22,7 +22,7 @@ class API
         $this->online = $this->serverOnline();
 
         // Check if there is a protocol file for the set game version
-        $version = settings( 'server_version', '156' );
+        $version = config( 'pw-api.game_version' );
 
         if ( file_exists( __DIR__ . '/../../protocols/pw_v' . $version . '.php' ) )
         {
@@ -46,7 +46,7 @@ class API
      */
     public function getRole($role)
     {
-        if ( settings( 'server_version' ) == '07' )
+        if ( config( 'pw-api.game_version' ) == '07' )
         {
             $user['base'] = $this->getRoleBase($role);
             $user['status'] = $this->getRoleStatus($role);
@@ -280,7 +280,7 @@ class API
             $params['storehouse']['material'] = array();
             $params['storehouse']['material'][] = $tmp;
         }
-        if ( settings( 'server_version' ) != '07' )
+        if ( config( 'pw-api.game_version' ) != '07' )
         {
             $pack = pack( "NNC*", -1, $role, 1).$this->gamed->marshal( $params, $this->data['role'] );
 
@@ -589,7 +589,7 @@ class API
      */
     public function serverOnline()
     {
-        return @fsockopen( settings( 'server_ip', '127.0.0.1' ), config( 'pw-api.ports.client' ), $errCode, $errStr, 1 ) ? TRUE : FALSE;
+        return @fsockopen( config( 'pw-api.server_ip' ), config( 'pw-api.ports.client' ), $errCode, $errStr, 1 ) ? TRUE : FALSE;
     }
 
     /**
@@ -603,7 +603,7 @@ class API
         foreach ( $port_list as $name => $port )
         {
             $ports[$name]['port'] = $port;
-            $ports[$name]['open'] = @fsockopen( settings( 'server_ip', '127.0.0.1' ), $port, $errCode, $errStr, 1 ) ? TRUE : FALSE;
+            $ports[$name]['open'] = @fsockopen( config( 'pw-api.server_ip' ), $port, $errCode, $errStr, 1 ) ? TRUE : FALSE;
         }
         return $ports;
     }
