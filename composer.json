@@ -1,0 +1,20 @@
+{
+  "name": "ham/pw-server-api",
+  "description": "A package to retrieve data from a Perfect World game server",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ilham Susanto",
+      "email": "ilhamsst13@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "autoload": {
+    "psr-0" : {
+      "Ham\\PerfectWorldAPI" : "src/"
+    }
+  },
+  "minimum-stability": "stable"
+}
