@@ -242,7 +242,7 @@ class Gamed
         if ( @fsockopen( setting('server.ip', '127.0.0.1'), $port, $errCode, $errStr, 1 ) )
         {
             $sock = socket_create( AF_INET, SOCK_STREAM, SOL_TCP );
-            socket_connect( $sock, config( 'pw-api.server_ip' ), $port );
+            socket_connect( $sock, setting('server.ip', '127.0.0.1'), $port );
 
 
             if ( config( 'pw-api.s_block' ) ) socket_set_block( $sock );
