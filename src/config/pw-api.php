@@ -3,13 +3,6 @@
 return [
 
     /**
-     * The IP of your machine the API will be connecting to.
-     *
-     * @var string
-     */
-    'server_ip' => setting('server.ip', '127.0.0.1'),
-
-    /**
      * These ports MUST be open if you the package isn't on the host machine
      *
      * @var array
@@ -28,8 +21,6 @@ return [
      *
      * @var int
      */
-    'game_version' => setting('server.version', '156'),
-
     'maxbuffer' => 65536,
 
     's_block' => FALSE,
