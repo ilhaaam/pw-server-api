@@ -342,6 +342,11 @@ class API
      * Command to start/stop binding time and start territorial war
      * @param mixed $param
      * @return mixed
+     * 
+     * Param :
+     * 327660 - Start Binding Time
+     * 414060 - Stop Binding Time
+     * 591600 - Start Territory War
      */
     public function territoryWar( $param )
     {
