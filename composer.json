@@ -12,15 +12,8 @@
     "php": ">=5.4.0"
   },
   "autoload": {
-    "psr-4" : {
+    "psr-0" : {
       "Ham\\PerfectWorldAPI\\" : "src/"
-    }
-  },
-  "extra": {
-    "laravel": {
-        "providers": [
-            "Ham\\PerfectWorldAPI\\ServiceProvider"
-        ]
     }
   },
   "minimum-stability": "stable"
